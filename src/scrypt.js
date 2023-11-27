@@ -38,7 +38,7 @@ refs.searchForm.addEventListener('submit', async function (event) {
       refs.gallery.innerHTML = createMarkup(data.hits);
       notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`);
       currentHits = data.hits.length;
-      console.log(currentHits);
+      // console.log(currentHits);
       console.log(data);
     }
     if (data.totalHits === data.hits.length) {
@@ -61,7 +61,7 @@ async function handleLoadMore() {
     refs.gallery.insertAdjacentHTML('beforeend', createMarkup(data.hits));
     refs.loadMoreBtn.disabled = false;
     currentHits = currentHits + data.hits.length;
-    console.log(currentHits);
+    // console.log(currentHits);
     if (currentHits === data.totalHits || currentHits >= 500) {
       notiflix.Notify.warning(
         "We're sorry, but you've reached the end of search results."
