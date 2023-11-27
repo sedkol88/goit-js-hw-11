@@ -35,6 +35,7 @@ refs.searchForm.addEventListener('submit', async function (event) {
       refs.gallery.innerHTML = createMarkup(data.hits);
       refs.loadMoreBtn.style.display = 'block';
       refs.loadMoreBtn.addEventListener('click', handleLoadMore);
+      notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`);
       console.log(data);
     }
   } catch (error) {
